@@ -43,7 +43,15 @@
 //         console.log("Hello! " + this.name);
 //     };
 // }
-// let igor = new User('Igor', 33);
+// const igor = new User('Igor', 33);
+
+// igor.hello();
+
+// igor.nationality = "Russian";
+
+// delete igor.human;
+// console.log(igor);
+
 
 // function sayName(surname) {
 //     console.log(this);
@@ -58,12 +66,13 @@
 // sayName.apply(user, ['Smith']);
 
 // function count(num) {
+//     console.log(this);
 //     return this * num;
 // }
 
 // const double = count.bind(2);
 // console.log(double(3));
-// console.log(double(13));
+// // console.log(double(13));
 
 
 // 1) Обычная функция: this = window, но если use strict - undefined
@@ -74,30 +83,42 @@
 const btn = document.querySelector('button');
 
 // btn.addEventListener('click', function() {
+//     console.log(this);
 //     this.style.backgroundColor = "red";
 // });
 
-btn.addEventListener('click', (e) => {
-    e.target.style.backgroundColor = "red";
-});
+// btn.addEventListener('click', (e) => {
+//     console.log(this);
+//     e.target.style.backgroundColor = "red";
+// });
 
-btn.addEventListener('click', () => {
-    console.log(this);
-});
+// btn.addEventListener('click', () => {
+//     console.log(this);
+//     this.style.backgroundColor = "red";
+// });
 
-const obj = {
-    num: 5,
-    sayNumber: function() {
-        const say = () => {
-            console.log(this.num);
-        };
+// const obj = {
+//     num: 5,
+//     sayNumber: function() {
+//         const say = () => {
+//             console.log(this.num);
+//         };
+//         say();
+//     }
+// };
+// obj.sayNumber();
 
-        say();
-    }
-};
 
-obj.sayNumber();
-
+// const obj = {
+//     num: 5,
+//     sayNumber: function() {
+//         const say = function() {
+//             console.log(this.num);
+//         };
+//         say();
+//     }
+// };
+// obj.sayNumber();
 
 const double = a => a * 2;
 
